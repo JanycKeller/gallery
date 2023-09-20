@@ -42,12 +42,14 @@ pipeline {
             }
         }
 
-       
+        stage('Deploy') {
+            steps {
+                // Add deployment steps here if needed
+                // For example, deploying to a server or a cloud service
+            }
         }
-
-        
     }
-    
+
     post {
         success {
             // Send notifications or perform additional actions on success
