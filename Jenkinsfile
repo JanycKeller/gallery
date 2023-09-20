@@ -5,6 +5,10 @@ pipeline {
         gradle "Gradle 8.3"
         nodejs 'Node.js 12.22.9' 
     }
+      environment {
+        // PATH to Node.js installation directory
+        PATH = "${tool name: 'Node.js 12.22.9'}/bin:${PATH}"
+    }
 
     stages {
         stage('Checkout') {
