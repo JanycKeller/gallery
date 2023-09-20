@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        gradle "Gradle 8.3"
+       
         nodejs 'Node.js 12.22.9' 
     }
       environment {
@@ -25,19 +25,9 @@ pipeline {
             }
         }
 
-        stage('Build the Project') {
-            steps {
-                // Builds project (Using Gradle)
-                sh 'gradle build'
-            }
-        }
+        
 
-        stage('Tests') {
-            steps {
-                // Run tests (Using Gradle)
-                sh 'gradle test'
-            }
-        }
+       
 
         stage('Run Tests') {
             steps {
