@@ -21,6 +21,12 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Run Tests') {
+    steps {
+        sh 'npm test'
+    }
+}
+
 
         stage('Deploy to Render') {
             steps {
