@@ -2,45 +2,50 @@ pipeline {
     agent any
     
     tools {
-       
         nodejs 'Node.js 12.22.9' 
     }
-      environment {
-        // PATH to Node.js installation directory
+    
+    environment {
         PATH = "${tool name: 'Node.js 12.22.9'}/bin:${PATH}"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Checks code from the repository
                 checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                // Installs npm dependencies
                 sh 'npm install'
             }
         }
 
-        
-
-       
-
         stage('Run Tests') {
             steps {
-                // Run npm tests
                 sh 'npm test'
             }
         }
 
+        stage('Deploy to Render') {
+            steps {
+                // Replace these commands with your actual deployment steps
+                // You may need to configure Render CLI or use Render integrations
+                sh 'render deploy'  // Example command (replace with Render deployment commands)
+            }
+        }
+
+        stage('Make Changes to Landing Page') {
+            steps {
+                // Add "MILESTONE 2" to your landing page
+                sh 'echo "MILESTONE 2" >> landing.html'
+            }
+        }
     }
 
     post {
         success {
-            // Send notifications or perform additional actions on success
             echo 'Pipeline succeeded!'
         }
     }
