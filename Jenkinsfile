@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         gradle "Gradle 8.3"
-        nodejs '12.22.9' 
+        'Node.js 12.22.9' 
     }
 
     stages {
@@ -42,12 +42,6 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                // Add deployment steps here if needed
-                // For example, deploying to a server or a cloud service
-            }
-        }
     }
 
     post {
