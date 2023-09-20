@@ -35,12 +35,14 @@ pipeline {
             }
         }
 
-        stage('Make Changes to Landing Page') {
-            steps {
-                // Add "MILESTONE 2" to your landing page
-                sh 'echo "MILESTONE 2" >> landing.html'
+       post {
+                success {
+                    script {
+                        def slackMessage = "Build ID: ${BUILD_ID}\n"
+                        slackSend(channel: 'projectip1', message: slackMessage)
+                    }
+                }
             }
-        }
     }
 
     post {
