@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         gradle "Gradle 8.3"
-        'Node.js 12.22.9' 
+        nodejs 'Node.js 12.22.9' 
     }
 
     stages {
