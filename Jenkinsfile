@@ -22,13 +22,10 @@ pipeline {
             }
         }
 
-        
-
         stage('Deploy to Render') {
             steps {
-                // Replace these commands with your actual deployment steps
-                // You may need to configure Render CLI or use Render integrations
-                sh 'render deploy'  // Example command (replace with Render deployment commands)
+                // Replace the command with the full path to the render executable
+                sh '/usr/local/bin/render deploy'
             }
         }
 
