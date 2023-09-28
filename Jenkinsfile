@@ -41,11 +41,8 @@ pipeline {
             script {
                 def slackMessage = "Build ID: ${BUILD_ID}\n"
                 slackSend(channel: 'projectip1', message: slackMessage)
+                echo 'Pipeline succeeded!'
             }
-        }
-        
-        success {
-            echo 'Pipeline succeeded!'
         }
     }
 }
