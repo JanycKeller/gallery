@@ -18,13 +18,14 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm install' 
+                sh 'npm install -g mocha' 
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm install -g mocha' 
+               
                 sh 'npm test'
             }
         }
