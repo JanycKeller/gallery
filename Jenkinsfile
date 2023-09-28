@@ -30,7 +30,7 @@ pipeline {
 
         stage('Deploy to Render') {
             steps {
-               
+                // Replace the command with the full path to the render executable
                 sh '/usr/local/bin/render deploy'
             }
         }
@@ -43,9 +43,7 @@ pipeline {
                 slackSend(channel: 'projectip1', message: slackMessage)
             }
         }
-    }
-
-    post {
+        
         success {
             echo 'Pipeline succeeded!'
         }
