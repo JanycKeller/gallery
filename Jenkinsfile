@@ -2,11 +2,11 @@ pipeline {
     agent any
     
     tools {
-        nodejs 'Node.js 12.22.9' 
+        nodejs 'Node.js 16.20.1' 
     }
     
     environment {
-        PATH = "${tool name: 'Node.js 12.22.9'}/bin:${PATH}"
+        PATH = "${tool name: 'Node.js 16.20.1'}/bin:${PATH}"
     }
 
     stages {
