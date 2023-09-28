@@ -25,6 +25,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
+                sh 'npm install chai' 
                
                 sh 'npm test'
             }
