@@ -24,13 +24,14 @@ pipeline {
 
         stage('Run Tests') {
             steps {
+                sh 'npm install -g mocha' 
                 sh 'npm test'
             }
         }
 
         stage('Deploy to Render') {
             steps {
-                // Replace the command with the full path to the render executable
+               
                 sh '/usr/local/bin/render deploy'
             }
         }
